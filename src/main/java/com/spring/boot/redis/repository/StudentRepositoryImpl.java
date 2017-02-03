@@ -16,6 +16,7 @@ import com.spring.boot.redis.model.Student;
 public class StudentRepositoryImpl implements StudentRepository {
 
 	private static final String KEY = "Student";
+
 	@Autowired
 	private RedisTemplate<String, Student> redisTemplate;
 

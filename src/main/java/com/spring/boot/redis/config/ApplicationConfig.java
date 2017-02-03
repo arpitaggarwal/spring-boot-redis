@@ -5,6 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
@@ -29,4 +30,8 @@ public class ApplicationConfig {
 		return redisTemplate;
 	}
 
+	@Bean
+	public RedisHttpSessionConfiguration redisHttpSessionConfiguration() {
+		return new RedisHttpSessionConfiguration();
+	}
 }
